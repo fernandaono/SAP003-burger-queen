@@ -7,10 +7,12 @@ import Order from '../Order'
 function Restaurant (){
     const [menu, setMenu] = useState([])
     const [order, setOrder] = useState([])
+    const [breakfast, setBreakfast] = useState(null)
+    
 
 
     useEffect(() => { 
-    firebase.firestore().collection('breakfast').where('Breakfast', '==', false).get().then((snapshot) => {
+    firebase.firestore().collection('breakfast').get().then((snapshot) => {
         snapshot.docs.map((doc) => setMenu ((current) => [...current, doc.data()]))
     })
     },[]); 
@@ -22,7 +24,10 @@ function Restaurant (){
     return(
         
             <div>
-                {menu.map((menuItem, i) =>
+                <button onClick={()=>{setBreakfast(true)}} >Café da Manhã</button>
+                <button onClick={()=>{setBreakfast(false)}}>Almoço/Jantar</button>
+                
+                {menu.filter((m)=>{return m.Breakfast === breakfast}).map((menuItem, i) =>
                     <MenuCard name = {menuItem.Name} 
                     key = {i}
                     price = {menuItem.Price} 
