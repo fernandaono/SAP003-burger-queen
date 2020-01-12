@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css'
 
-function MenuCard(props){
+const MenuCard = (props) => {
     return  (
-        <section onClick={props.handeClick} className='menucss' > 
+        <button className='btn' onClick={props.handleClick} > 
             <p>{props.name}</p>
-            <p>R$ {props.price},00</p>
-        </section>
+            <p>R${props.price},00</p>
+        </button>
+        
     )
 }
 

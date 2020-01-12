@@ -6,7 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import Restaurant from './pages/Restaurant';
-import Kitchen from './pages/Kitchen';
+import Kitchen from './pages/Kitchen'
+
 
 function App() {
   return (
@@ -14,21 +15,17 @@ function App() {
       <div>
         <nav>
           <ul className= 'rotas'>
-            <li>
-              <Link to="/pages/breakfast">Café da Manhã</Link>
-            </li>
-            <li>
-              <Link to="/pages/lunch">Lanches & Bebidas</Link>
-            </li>
+            <button><Link to="/pages/restaurant">Pedidos</Link></button>
+            <button><Link to="/pages/kitchen">Cozinha</Link></button>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/pages/breakfast" component={Restaurant}>
+          <Route path="/pages/restaurant" component={Restaurant}>
             <Restaurant/>
           </Route>
          
-          <Route path="/pages/lunch" component={Kitchen}>
+          <Route path="/pages/kitchen" component={Kitchen}>
             <Kitchen/>
           </Route>
         </Switch>
