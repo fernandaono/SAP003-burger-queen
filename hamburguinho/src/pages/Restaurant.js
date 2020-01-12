@@ -6,7 +6,7 @@ import MenuCard from '../components/Menucard';
 function placeOrder(items, name){
     if(name == null)
         return alert("Preencha o nome do cliente")
-        
+
     firebase.firestore().collection('orders').doc().set({
         name: name,
         items: items,
@@ -14,12 +14,11 @@ function placeOrder(items, name){
     }).then(alert("Pedido Enviado!"));
 }
 function Restaurant (){
-    const [menu, setMenu] = useState([])
-    const [items, setItems] = useState([])
-    const [breakfast, setBreakfast] = useState(null)
-    const [name, setName] = useState(null)
-    const nameRef = useRef(null)
-
+    const [menu, setMenu] = useState([]);
+    const [items, setItems] = useState([]);
+    const [breakfast, setBreakfast] = useState(null);
+    const [name, setName] = useState(null);
+    const nameRef = useRef(null);
 
     useEffect(() => { 
         nameRef.current.value = ''
@@ -42,7 +41,7 @@ function Restaurant (){
                 <MenuCard key = {i} {...menuItem} 
                 handleClick = {() => {addOrder(menuItem)} }/>
             )}
-            
+
             <section>
                 <h1>Pedidos</h1>
                     {items.map(el => <p> 1 {el.Name} R${el.Price},00 </p>)}

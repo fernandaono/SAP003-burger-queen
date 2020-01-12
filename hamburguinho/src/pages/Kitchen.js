@@ -5,19 +5,19 @@ import OrderCard from '../components/Order';
 function Kitchen (){
     const [orders, setOrders] = useState([])
 
-    useEffect(()=> {
-        firebase.firestore().collection('order').get().then((snapshot) => {
-            snapshot.docs.map((doc) => setOrders ((current) => [...current, doc.data()]))   
-   })
-    },[]);
+    useEffect(() => { 
+        firebase.firestore().collection('orders').get().then((snapshot) => {
+            snapshot.docs.map((doc) => setOrders ((current) => [...current, doc.data()]))
+        })
+    },[]); 
 
     return (
         <div>
-            {orders.map((order) => 
+            {orders.map((order, i) => 
             <OrderCard creationDate = {order.creationDate}
-            key = {order.number}
+            key = {i}
             name = {order.name} 
-            items = {order.items.map((item)=> <p>{item.Name}</p> )}/>  
+            items = {order.items}/>  
             )}
         </div>
     );
