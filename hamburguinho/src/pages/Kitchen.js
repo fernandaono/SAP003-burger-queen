@@ -1,32 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import firebase from '../utils/firebaseUtils';
-import MenuCard from '../components/Menucard';
-
+import OrderCard from '../components/Order';
 
 function Kitchen (){
-    const [lunch, setLunch] = useState([])
+    const [orders, setOrders] = useState([])
 
-    useEffect(() => { 
-    
-      firebase.firestore().collection('breakfast').where('Breakfast', '==', true).get().then((snapshot) => {
-        snapshot.docs.map((doc) => setLunch ((current) => [...current, doc.data()]))
-    })
+    useEffect(()=> {
+        firebase.firestore().collection('order').get().then((snapshot) => {
+            snapshot.docs.map((doc) => setOrders ((current) => [...current, doc.data()]))   
+   })
+    },[]);
 
-    },[]);    
-    
-
-    return(
+    return (
         <div>
-
-            {lunch.map((menuItem, i) =>
-                <MenuCard 
-                name = {menuItem.Name} 
-                key = {i}
-                price = {menuItem.Price} 
-                handleclick = {() => console.log(menuItem)}/>
-                )}
+            {orders.map((order) => 
+            <OrderCard creationDate = {order.creationDate}
+            key = {order.number}
+            name = {order.name} 
+            items = {order.items.map((item)=> <p>{item.Name}</p> )}/>  
+            )}
         </div>
-        
     );
 };
 
