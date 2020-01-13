@@ -45,8 +45,8 @@ function Restaurant (){
     return(
         
         <div>
-            <button onClick={()=>{setBreakfast(true)}} >Café da Manhã</button>
-            <button onClick={()=>{setBreakfast(false)}}>Almoço/Jantar</button>
+            <section className="btn-set" onClick={()=>{setBreakfast(true)}} >Café da Manhã</section>
+            <section className="btn-set" onClick={()=>{setBreakfast(false)}}>Almoço/Jantar</section>
             <br></br>
             {menu.filter((m)=>{return m.breakfast === breakfast}).map((menuItem, i) =>
                 <MenuCard key = {i} {...menuItem} 
@@ -56,13 +56,16 @@ function Restaurant (){
             <section>
 
                 <Receipt {...{name: name, items: items, table: table}} onDelete = {onDelete}/>
-                
+                <br></br>
+                <label>Cliente</label>
                 <input ref = {nameRef} placeholder="Nome do Cliente" onChange = {()=>{
-                    setName(nameRef.current.value)}} >
+                    setName(nameRef.current.value)}}> 
                 </input>
+                <label>N. Mesa</label>
                 <input ref = {tableRef} placeholder="N. Mesa" onChange = {()=>{
-                    setTable(tableRef.current.value)}} >
+                    setTable(tableRef.current.value)}}>
                 </input>
+                
                 <button onClick = {()=>{placeOrder(items,name,table)}}>Enviar</button>
             </section>
         </div>

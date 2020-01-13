@@ -1,10 +1,11 @@
 import React from 'react';
+import './index.css'
 
 const Receipt = (props) => {
     return (
-        <div>
+        <div className='info'>
             <p>Nome: {props.name}</p>
-            <p>Mesa: {props.table}</p>
+            <p>N. Mesa: {props.table}</p>
             <ol>
             {props.items.map((item, i) =>
                 <li key= {i}>

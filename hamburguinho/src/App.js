@@ -7,19 +7,18 @@ import {
 } from "react-router-dom";
 import Restaurant from './pages/Restaurant';
 import Kitchen from './pages/Kitchen'
-
+import './App.css'
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
+          <nav className= 'topnav'>
           <ul className= 'rotas'>
-            <button><Link to="/pages/restaurant">Pedidos</Link></button>
-            <button><Link to="/pages/kitchen">Cozinha</Link></button>
+            <a href><Link to="/pages/restaurant">Pedidos </Link></a> 
+            <a href><Link to="/pages/kitchen">Cozinha</Link></a>
           </ul>
-        </nav>
-
+          </nav>
         <Switch>
           <Route path="/pages/restaurant" component={Restaurant}>
             <Restaurant/>
