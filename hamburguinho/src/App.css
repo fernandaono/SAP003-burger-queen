@@ -1,7 +1,6 @@
 body {
     background-color: #f9943b;
-    background-image: url("./images/logo.png");
-    background-repeat: space, revert;
+    background-image: url("./images/logo5.png");
 }
 
  .topnav {
@@ -14,16 +13,13 @@ body {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 4px 6px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
   }
   
-  /* Add an active class to highlight the current page */
-  .topnav a.active {
-    background-color: #4CAF50;
+  .topnav:active {
+    background-color: rgb(189, 58, 108);
     color: white;
   }
-  
-  
-  
+ 

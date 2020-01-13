@@ -20,7 +20,7 @@ const Receipt = (props) => {
              <p>Total = {props.items.reduce((acc, cur) => acc + cur.price,0)},00</p>
             </section>
         </div>
-    );
+    )
 };
 
 export default Receipt;
