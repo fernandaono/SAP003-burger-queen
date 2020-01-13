@@ -13,11 +13,16 @@ function Kitchen (){
 
     return (
         <div>
-            {orders.map((order, i) => 
+            {orders.map((order, index) => 
             <OrderCard creationDate = {order.creationDate}
-            key = {i}
+            key = {index}
+            time = {order.time}
+            table = {order.table}
             name = {order.name} 
-            items = {order.items}/>  
+            items = {order.items}
+            status = {order.status}
+            
+            />  
             )}
         </div>
     );
