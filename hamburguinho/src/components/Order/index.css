@@ -1,0 +1,14 @@
+.order{
+    background-color:#993349;
+    color: white;
+    padding: 30px 10px;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    text-align: left;
+    display: list-item;
+    font-size: 15px;
+    margin: 10px;
+    cursor: pointer;
+}

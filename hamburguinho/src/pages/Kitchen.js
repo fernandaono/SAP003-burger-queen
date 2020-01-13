@@ -12,7 +12,7 @@ function Kitchen (){
     },[]); 
 
     return (
-        <div>
+        <div className='container'>
             {orders.map((order, index) => 
             <OrderCard creationDate = {order.creationDate}
             key = {index}

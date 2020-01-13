@@ -1,9 +1,9 @@
 import React from 'react';
+import './index.css'
 
 const OrderCard = (props) => {
     return (
         <section className = 'order'>
-            <fieldset>
             <h1>{props.name}</h1>
             <b>N. Mesa: {props.table}</b>
             <span>{props.creationDate}</span>
@@ -11,9 +11,7 @@ const OrderCard = (props) => {
             <ol>{props.items.map((item)=>
                 <li> {item.name}</li>)}
             </ol>
-            <button>{props.status}</button>
-            </fieldset>
-       </section>
+            </section>
     )
 }
 

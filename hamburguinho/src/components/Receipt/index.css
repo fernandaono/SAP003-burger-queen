@@ -1,0 +1,11 @@
+.info {
+    background-color: #993349;
+    color: white;
+    padding: 2px 20px;
+    text-align: justify;
+    display: inline-block;
+    font-size: 12px;
+    margin: 45px 2px;
+    cursor: pointer;
+    width: 20%;
+}
