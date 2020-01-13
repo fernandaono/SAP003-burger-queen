@@ -1,13 +1,18 @@
 import React from 'react';
 
-function OrderCard(props){
+const OrderCard = (props) => {
     return (
         <section className = 'order'>
+            <fieldset>
+            <h1>{props.name}</h1>
+            <b>N. Mesa: {props.table}</b>
             <span>{props.creationDate}</span>
-            <span>{props.name}</span>
-            <ol>{props.items.map((item, i)=>
-                <li> {item.Name}</li>)}
+            <p>{props.time}</p>
+            <ol>{props.items.map((item)=>
+                <li> {item.name}</li>)}
             </ol>
+            <button>{props.status}</button>
+            </fieldset>
        </section>
     )
 }
