@@ -55,7 +55,7 @@ function Restaurant (){
 
             <section>
 
-                <Receipt {...{name: name, items: items}} onDelete = {onDelete}/>
+                <Receipt {...{name: name, items: items, table: table}} onDelete = {onDelete}/>
                 
                 <input ref = {nameRef} placeholder="Nome do Cliente" onChange = {()=>{
                     setName(nameRef.current.value)}} >
