@@ -35,29 +35,29 @@ body {
   }
   .container > div {
     width: 25%;
-    margin: 3px;
+    margin: 8px;
   }
 
   .creation {
      background-color: 
-     #DDF4DD
+     #993349
      ;
   }
 
    .preparation{
      background-color: 
-     #90DA9A
+     #993349
      ;
    }
    
    .ready {
      background-color:  
-     #6ACD98
+     #993349
      ;
    }
 
    .delivery {
      background-color:  
-     #808080
+     #993349
      ;
    }
