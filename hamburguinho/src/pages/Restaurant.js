@@ -166,7 +166,7 @@ function Restaurant (){
                     setTable(tableRef.current.value)}}/>
                 <p></p>
                 </form>
-               <button onClick = {()=>{placeOrder(items,name,table,onOrderPlaced)}}>Enviar</button>
+               <button onClick = {()=>{placeOrder(items,name,table,onOrderPlaced)}}>Enviar Pedido</button>
             </section>
         </div>
         

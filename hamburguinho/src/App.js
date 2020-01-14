@@ -15,8 +15,8 @@ function App() {
       <div>
           <nav className= 'topnav'>
           <ul className= 'rotas'>
-            <a href><Link to="/pages/restaurant">Pedidos </Link></a> 
-            <a href><Link to="/pages/kitchen">Cozinha</Link></a>
+            <a href><Link to="/pages/restaurant">Novo Pedido </Link></a> 
+            <a href><Link to="/pages/kitchen">Status dos Pedidos</Link></a>
           </ul>
           </nav>
         <Switch>
