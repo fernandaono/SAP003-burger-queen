@@ -9,15 +9,16 @@ const Receipt = (props) => {
             <ol>
             {props.items.map((item, i) =>
                 <li key= {i}>
-                {item.name}
-                {item.table}
-
-                <button onClick = {()=> {props.onDelete(i)}}>x</button>
+                {item.name} 
+                {props.type}
+                {props.extra.name}
+                {item.table} 
+                <a className='fa fa-trash' onClick = {()=> {props.onDelete(i)}}></a>
                 </li>
                 )}
             </ol>
             <section>
-             <p>Total = {props.items.reduce((acc, cur) => acc + cur.price,0)},00</p>
+                <p>Total = {props.items.reduce((acc, cur) => acc + cur.price, props.extra.price)},00</p>
             </section>
         </div>
     )

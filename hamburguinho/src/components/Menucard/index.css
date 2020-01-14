@@ -1,7 +1,7 @@
 .btn {
     background-color: #993349;
     color: white;
-    padding: 16px 32px;
+    padding: 9px 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -14,7 +14,7 @@
 .btn-set {
     background-color:#581D27;
     color: white;
-    padding: 16px 32px;
+    padding: 9px 9px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
