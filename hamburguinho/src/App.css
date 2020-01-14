@@ -1,6 +1,6 @@
 body {
     background-color: #f9943b;
-    background-image: url("./images/logo5.png");
+    background-image: url("./images/logo7.png");
 }
 
  .topnav {
@@ -10,7 +10,7 @@ body {
   
   .topnav a {
     float: left;
-    display: block;
+    display: inline-table;
     color: #f2f2f2;
     text-align: center;
     padding: 4px 6px;
@@ -22,4 +22,42 @@ body {
     background-color: rgb(189, 58, 108);
     color: white;
   }
- 
+
+  .input[type=text] {
+      border: none;
+      border-bottom: 2px solid #993349;
+      background-color: transparent;
+      color: white
+    }
+
+  .container{ 
+    display: flex;
+  }
+  .container > div {
+    width: 25%;
+    margin: 3px;
+  }
+
+  .creation {
+     background-color: 
+     #DDF4DD
+     ;
+  }
+
+   .preparation{
+     background-color: 
+     #90DA9A
+     ;
+   }
+   
+   .ready {
+     background-color:  
+     #6ACD98
+     ;
+   }
+
+   .delivery {
+     background-color:  
+     #808080
+     ;
+   }
