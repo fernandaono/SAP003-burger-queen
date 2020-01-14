@@ -8,7 +8,11 @@ const OrderCard = (props) => {
             <span>N. Mesa: {props.table}</span><br></br>
             <span>{new Date(props.creationDate.seconds*1000).toLocaleDateString('pt-BR')}</span>
             <ol>{props.items.map((item)=>
-                <li> {item.name}</li>)}
+                <li> 
+                {item.name}
+                {item.type ? <>, {item.type}</> : ''} 
+                {item.extra ? item.extra.length > 0 ? <>, {item.extra[0].name}</>:'':''}
+                </li>)}
             </ol>
             {props.buttonText ? <button onClick = {props.onClick}>{props.buttonText}</button> : ''}
             </section>

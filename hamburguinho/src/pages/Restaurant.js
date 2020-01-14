@@ -7,16 +7,15 @@ import Modal from '../components/Modal';
 const HamburgerType = ({item, onTypeSelect}) => {
     return (
         <div>
-            <label> Tipo de Hamburguer:
+            <h1> Tipo de Hamburguer:</h1>
             {item.type.map((e, i)=>
                 <><input
                 name= 'type'
                 type= 'radio'
                 key = {i}
                 value = {e} 
-                onClick = {() => {onTypeSelect(e)}}/>{e}<br/></>
+                onClick = {() => {onTypeSelect(e)}} />{e}<br/></>
             )}
-                </label>
         </div>
     );
 };
@@ -24,17 +23,16 @@ const HamburgerType = ({item, onTypeSelect}) => {
 const Extra = ({item, onExtraSelect}) => {
     return (
         <div>
-        <label> Adicional:
+        <h1> Adicional:</h1>
         {item.extra.map((e, i)=>
             <><input
             name= 'extra'
             type= 'radio'
             key = {e.name}
             value = {e.price} 
-            onClick = {() => {onExtraSelect(e.name)}}
+            onClick = {() => {onExtraSelect(e)}}
             />{e.name}<br/></>
         )}
-            </label>
         </div>
     );
 };
@@ -80,16 +78,25 @@ function Restaurant (){
     },[]); 
     
     const addOrder = (menuItem) => {
-        setChildren(null);
-        if(menuItem.type && menuItem.extra){
-            setChildren(<div><HamburgerType item = {menuItem} onTypeSelect= {onTypeSelect}/> Extra item = {menuItem} onExtraSelect = {onExtraSelect}/></div>);
+        let item = Object.assign({},menuItem)
+        if(menuItem.type && item.extra){
+            setChildren(<div>
+            <HamburgerType 
+            item = {item} 
+            onTypeSelect= {onTypeSelect}/>
+            <Extra 
+            item = {item} 
+            onExtraSelect = {onExtraSelect}/>
+            </div>);
             setShowModal(true)
         }
-        setItems([...items, menuItem])   
+        setItems([...items, item])
     }
 
     const onDelete = key => {
         setItems(items.filter((del,i) => i !== key))
+        setExtra({price:0,name:''})
+        setType(null)
     }
 
     const onOrderPlaced = () => {
@@ -97,6 +104,8 @@ function Restaurant (){
         setBreakfast(null);
         setName(null);
         setTable(null);
+        setExtra({price:0,name:''})
+        setType(null)
         nameRef.current.value = ""
         tableRef.current.value = ""
     }
@@ -106,12 +115,36 @@ function Restaurant (){
     }
     const onExtraSelect = (option) => {
         setExtra(option);
-    }   
+    }
+
+    const onSelect = () => {
+        if(!extra.name && !type){
+            alert('Selecione um tipo de hamburguer e um extra.')
+            return
+        }
+        if(!extra) {
+            alert('Selecione um extra.')
+        }
+        if(!type) {
+            alert('Selecione um tipo de hamburguer.')
+            return
+        }
+        let item = items[items.length-1]
+        item.extra = [extra]
+        item.type = [type]
+        setExtra({price:0,name:''})
+        setType(null)
+        items.splice(-1,1)
+        setItems([...items, item])
+        setMenu(menu)
+        setShowModal(false);
+        setChildren(null);
+    }
 
     return(
         
         <div>
-            <Modal setShowModal = {setShowModal} show = {showModal} children = {children}/>
+            <Modal onSelect = {onSelect} show = {showModal} children = {children}/>
             <section className="btn-set" onClick={()=>{setBreakfast(true)}} >Café da Manhã</section>
             <section className="btn-set" onClick={()=>{setBreakfast(false)}}>Almoço/Jantar</section>
             <br></br>
@@ -121,7 +154,7 @@ function Restaurant (){
             )}
 
             <section>
-                <Receipt {...{name: name, items: items, table: table, extra:extra, type:type}} onDelete = {onDelete}/>
+                <Receipt {...{name: name, items: items, table: table}} onDelete = {onDelete}/>
                 <br></br>
                 <form className="frm-container">
                 <label>Cliente </label>
