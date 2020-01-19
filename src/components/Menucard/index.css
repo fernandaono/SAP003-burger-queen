@@ -5,10 +5,20 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
+    font-size: 14px;
+    margin: 10px 10px;
     cursor: pointer;
-    width: 20%;
+    padding: 10px 10px;
+    width: 225px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    background-color: #C77557;
+    border: none;
 }
 
 .btn-set {
@@ -19,7 +29,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    margin: 4px 2px;
+    margin: 10px 10px;
     cursor: pointer;
     width: 20%;
 
