@@ -1,1 +1,0 @@
-![](/src/images/Novo_Pedido_Cafe.png)

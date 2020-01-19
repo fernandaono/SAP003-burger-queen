@@ -8,9 +8,13 @@
     text-align: center;
 }
 
+.modal:focus {
+    outline: none;
+  }
+
 .modal-main {
     position:fixed;
-    background:#DDF4DD;
+    background: #C77557;
     width: 50%;
     height: auto;
     top: 50%;
