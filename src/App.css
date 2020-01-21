@@ -1,8 +1,10 @@
 body {
-    background-color: #f9943b;
-    background-image: url("./images/logo7.png");
+    background-color: #ffffff;
+    background-image: url("./images/logo_hamburguinho.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: bottom;
   }
 
  .topnav {
@@ -49,25 +51,21 @@ body {
   }
 
   .creation {
-     background-color: 
-     #993349
-     ;
+     background-color: #993349;
+     color: white;
   }
 
    .preparation{
-     background-color: 
-     #993349
-     ;
+     background-color:  #993349;
+     color: white;
    }
    
    .ready {
-     background-color:  
-     #993349
-     ;
+     background-color: #993349;
+     color: white;
    }
 
    .delivery {
-     background-color:  
-     #993349
-     ;
+     background-color: #993349;
+     color: white;
    }
