@@ -5,15 +5,16 @@ const OrderCard = (props) => {
     return (
         <section className = 'order'>
             <h1>{props.name}</h1>
-            <span>N. Mesa: {props.table}</span><br></br>
-            <span>{new Date(props.creationDate.seconds*1000).toLocaleDateString('pt-BR')}</span>
-            <ol>{props.items.map((item)=>
+            <p>N. Mesa: {props.table} </p>
+            <span>{new Date(props.creationDate.seconds*1000).toLocaleDateString('pt-BR')} - </span>
+            <span>{new Date(props.creationDate.seconds*1000).toLocaleTimeString('pt-BR')} </span>
+                      
+                {props.items.map((item)=>
                 <li> 
                 {item.name}
                 {item.type ? <>, {item.type}</> : ''} 
                 {item.extra ? item.extra.length > 0 ? <>, {item.extra[0].name}</>:'':''}
                 </li>)}
-            </ol>
             {props.buttonText ? <button onClick = {props.onClick}>{props.buttonText}</button> : ''}
             </section>
     )

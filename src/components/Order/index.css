@@ -1,6 +1,6 @@
 .order{
-    background-color: #C77557;
-    color: white;
+    background-color: #EBEBEB;
+    color: #993349;
     padding: 30px 10px;
     padding-top: 30px;
     padding-right: 10px;
@@ -8,7 +8,6 @@
     padding-left: 10px;
     text-align: left;
     font-size: 15px;
-    margin: 10px;
+    margin: inherit;
     cursor: pointer;
-    
 }
