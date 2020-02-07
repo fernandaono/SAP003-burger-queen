@@ -1,16 +1,16 @@
-[Fluxograma]
+## Fluxograma
 
 Novo Pedido - Café da Manhã
-![](/src/images/Novo_Café.png)
+![fluxograma café da manhã](/src/images/Novo_Café.png)
 
 Novo Pedido - Almoço e Jantar
-![](/src/images/Novo_Pedido_Outros.png)
+![fluxograma almoço e jantar](/src/images/Novo_Pedido_Outros.png)
 
-[Protótipos]
+## Protótipos
 
 Aba: Novo Pedido
 
-![](/src/images/prototype01.png)
+![imagem do protótipo da tela de novos pedidos](/src/images/prototype01.png)
 
 + Usuário seleciona itens;
 + Usuário pode excluir itens do pedido;
@@ -18,7 +18,7 @@ Aba: Novo Pedido
 + Após preencher o pedido é possível enviá-lo para a cozinha. 
 
 Aba: Status dos Pedidos
-![](/src/images/prototype02.png)
+![imagem do protótipo da tela de status do pedido](/src/images/prototype02.png)
 
 É possível acompanhar o pedidos em: 
 
@@ -31,9 +31,7 @@ onde se encontram os pedidos que foram enviados pelo garçom para a cozinha;
 
 + Entregue: o garçom entregou o pedido ao cliente. 
 
-
-
-[Dependências & Ferramentas]
+## Dependências & Ferramentas
 
 + React
 + Firebase
