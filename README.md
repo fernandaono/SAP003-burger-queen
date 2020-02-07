@@ -1,9 +1,9 @@
 ## Fluxograma
 
-Novo Pedido - Café da Manhã
+Fluxo de usabilidade ao fazer um novo pedido no menu "café da manhã".
 ![fluxograma café da manhã](/src/images/Novo_Café.png)
 
-Novo Pedido - Almoço e Jantar
+Fluxo de usabilidade ao fazer um novo pedido no menu "Almoço e Jantar".
 ![fluxograma almoço e jantar](/src/images/Novo_Pedido_Outros.png)
 
 ## Protótipos
