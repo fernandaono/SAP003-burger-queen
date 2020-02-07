@@ -8,7 +8,10 @@ Fluxo de usabilidade ao fazer um novo pedido no menu "Almoço e Jantar".
 
 ## Protótipos
 
-Aba: Novo Pedido
+A partir das histórias de usuários e a necessidade dos clientes, foram pensados em duas telas: 1. "novo pedido", 2. "status do pedido"
+
+Onde, 
+###Novo Pedido
 
 ![imagem do protótipo da tela de novos pedidos](/src/images/prototype01.png)
 
@@ -17,7 +20,7 @@ Aba: Novo Pedido
 + Usuário consegue incluir nome do cliente e número da mesa e 
 + Após preencher o pedido é possível enviá-lo para a cozinha. 
 
-Aba: Status dos Pedidos
+###Status dos Pedidos
 
 ![imagem do protótipo da tela de status do pedido](/src/images/prototype02.png)
 
