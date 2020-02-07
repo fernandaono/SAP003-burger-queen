@@ -18,6 +18,7 @@ Aba: Novo Pedido
 + Após preencher o pedido é possível enviá-lo para a cozinha. 
 
 Aba: Status dos Pedidos
+
 ![imagem do protótipo da tela de status do pedido](/src/images/prototype02.png)
 
 É possível acompanhar o pedidos em: 
