@@ -1,15 +1,22 @@
-import React from 'react';
-import './index.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './index.css'
 
-const Modal = ({onSelect, show, children}) => {
-    const showHideClassName = show ? 'modal display-block': 'modal display-none';
-    return (
-        <div className={showHideClassName}>
-            <section className='modal-main'> {children}
-                <button onClick= {onSelect}>OK</button>
-            </section>
-        </div>
-    );
-};
+const Modal = ({ onSelect, show, childr }) => {
+  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+  return (
+    <div className={showHideClassName}>
+      <section className='modal-main'> {childr}
+        <button onClick={onSelect}>OK</button>
+      </section>
+    </div>
+  )
+}
 
-export default Modal;
+Modal.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
+  childr: PropTypes.any.isRequired
+}
+
+export default Modal
