@@ -1,21 +1,3 @@
-/*import React from 'react';
-import './index.css';
-import Button from '@material-ui/core/Button';
-
-const MenuCard = (props) => {
-    return  (
-        <section className='btn' onClick={props.handleClick} > 
-        <Button variant="contained" color="primary">
-            <p>{props.name}</p>
-            <p>{props.price.toLocaleString()}</p>
-        </Button>
-        </section>
-        
-    )
-}
-
-export default MenuCard;
-*/
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Card, CardActionArea, CardContent, Typography, Paper} from '@material-ui/core';
@@ -39,6 +21,7 @@ const useStyles = makeStyles({
 
 export default function Menucard(props) {
     const classes = useStyles();
+    // eslint-disable-next-line
     const bull = <span className={classes.bullet}>•</span>;
 
     return (
