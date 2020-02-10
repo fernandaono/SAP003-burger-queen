@@ -29,7 +29,7 @@ export default function Menucard(props) {
         <Card className={classes.root} onClick={props.handleClick}>
             <CardActionArea>
                 <CardContent>
-                    <Typography variant='h5' component='h2'>
+                    <Typography variant='h6' component='h2'>
                         {props.name}
                     </Typography>
                     <Typography variant='body2' component='p'>

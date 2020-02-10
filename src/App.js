@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Restaurant from './pages/Restaurant'
 import Kitchen2 from './pages/Kitchen2'
-// import './App.css'
 import Navigation from './components/Navigation'
 import CssBaseline from '@material-ui/core/CssBaseline';
 

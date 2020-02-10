@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core'
-import {} from '../../utils/numberUtils'
+import { } from '../../utils/numberUtils'
 
 const useStyles = makeStyles({
   table: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Receipt (props) {
+export default function Receipt(props) {
   const classes = useStyles()
 
   return (
@@ -28,13 +28,17 @@ export default function Receipt (props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.items.map((item, i) =>
-            <TableRow key={i}>
-              <TableCell className={classes.tableCell}>{i + 1}</TableCell>
-              <TableCell className={classes.tableCell} component='th' scope='row'>{item.name}</TableCell>
-              <TableCell className={classes.tableCell} align='right'>{item.price.format(2, 3, '.', ',')}</TableCell>
-            </TableRow>
-          )}
+          {props.items.map((item, i) => {
+            const total = item.price + (item.extra ? item.extra[0].price : 0)
+            const desc = item.name + (item.type ? `, ${item.type}` : '') + (item.extra ? `, ${item.extra[0].name}` : '')
+            return (
+              <TableRow key={i}>
+                <TableCell className={classes.tableCell}>{i + 1}</TableCell>
+                <TableCell className={classes.tableCell} component='th' scope='row'>{desc}</TableCell>
+                <TableCell className={classes.tableCell} align='right'>{total.format(2, 3, '.', ',')}</TableCell>
+              </TableRow>
+            )
+          })}
         </TableBody>
       </Table>
     </TableContainer>

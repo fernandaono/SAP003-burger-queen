@@ -34,17 +34,26 @@ const Kitchen2 = () => {
   }, [])
 
   const onClick = (order) => {
-    if (order.data.status === 'pending') {
+    if (order.data.creationDate 
+      && !order.data.preparationDate 
+      && !order.data.readyDate 
+      && !order.data.deliveryDate) {
       order.data.preparationDate = new Date()
       firebase.firestore().collection('orders').doc(order.key).set({
         preparationDate: order.data.preparationDate
       }, { merge: true })
-    } else if (order.data.status === 'preparing') {
+    } else if (order.data.creationDate
+      && order.data.preparationDate 
+      && !order.data.readyDate 
+      && !order.data.deliveryDate) {
       order.data.readyDate = new Date()
       firebase.firestore().collection('orders').doc(order.key).set({
         readyDate: order.data.readyDate
       }, { merge: true })
-    } else if (order.data.status === 'ready') {
+    } else if (order.data.creationDate
+      && order.data.preparationDate 
+      && order.data.readyDate 
+      && !order.data.deliveryDate) {
       order.data.deliveryDate = new Date()
       firebase.firestore().collection('orders').doc(order.key).set({
         deliveryDate: order.data.deliveryDate
